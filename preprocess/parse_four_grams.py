@@ -101,6 +101,7 @@ def insert_grams(counter, cur):
 def get_db(db_path):
     '''Get a connection and cursor to the db'''
     conn = sqlite3.connect(db_path)
+    # Foreign key enforcement seems to cause issues with inserting into four_grams
     #conn.execute('pragma foreign_keys=on')
     cur = conn.cursor()
     return conn, cur
