@@ -13,19 +13,21 @@ The script runs very slowly, since random reads/writes on spinning hard drives a
 
 The schema for the database is:
 
-tokens
-| Col | Type |
-| :-: | :-: |
-| id | INTEGER PRIMARY KEY (alias of built-in rowid) |
-| token | TEXT UNIQUE NOT NULL |
+#####tokens
 
-four\_grams WITHOUT ROWID
-| Col | Type |
-| :-: | :-: |
-| t1\_id | INTEGER NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES token(id) |
-| t2\_id | INTEGER NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES token(id) |
-| t3\_id | INTEGER NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES token(id) |
-| t4\_id | INTEGER NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES token(id) |
-| count | INTEGER DEFAULT 1 NOT NULL |
+Col | Type
+--- | ----
+id | INTEGER PRIMARY KEY (alias of built-in rowid)
+token | TEXT UNIQUE NOT NULL
+
+#####four\_grams WITHOUT ROWID
+
+Col | Type
+--- | ----
+t1\_id | INTEGER NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES token(id)
+t2\_id | INTEGER NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES token(id)
+t3\_id | INTEGER NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES token(id)
+t4\_id | INTEGER NOT NULL PRIMARY KEY FOREIGN KEY REFERENCES token(id)
+count | INTEGER DEFAULT 1 NOT NULL
 
 Since there are a limted number of tokens in any language, the size of the database remains managable as more four grams are inserted.
