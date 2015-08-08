@@ -30,7 +30,7 @@ CREATE TABLE four_grams (
     t2_id INTEGER NOT NULL,
     t3_id INTEGER NOT NULL,
     t4_id INTEGER NOT NULL,
-    count DEFAULT 1 NOT NULL,
+    count INTEGER DEFAULT 1 NOT NULL,
     PRIMARY KEY (t1_id, t2_id, t3_id, t4_id),
     FOREIGN KEY (t1_id) REFERENCES token (id),
     FOREIGN KEY (t2_id) REFERENCES token (id),
