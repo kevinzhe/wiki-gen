@@ -1,0 +1,19 @@
+## vim
+*.swp
+
+## Python specific
+__pycache__/
+*.py[cod]
+*$py.class
+
+## Project specific
+# wiki xml dumps
+preprocess/compressed/
+preprocess/extracted/
+preprocess/parsed/
+# xml dump parsing
+preprocess/parse_xml/
+# gram extracting
+preprocess/ramdisk
+preprocess/*-log
+www/db
