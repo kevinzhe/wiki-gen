@@ -27,54 +27,58 @@ function wikiFunction(status) {
     $(".main-text").html(bodyText);
     
     // drop down menu for smaller devices
-    $(".navigation-menu a").css("width", parseInt($("header").css("width")));
+    $(".site-menu a").css("width", parseInt($("header").css("width")));
     
     if ($(window).innerWidth() < 768) {
-        $(".navigation-menu img").attr("src", "");
-        $(".navigation-menu a").hide();
+        $(".site-menu img").attr("src", "");
+        $(".site-menu a").hide();
     }
     else {
-        $(".navigation-menu img").attr("src", "img/wikigenLogo.png");
-        $(".navigation-menu").css("display", "block");
+        $(".site-menu img").attr("src", "img/wikigenLogo.png");
+        $(".site-menu").css("display", "block");
     }
     
     if ($(window).innerWidth() > 768) {
     //nav bar on left side
     $("nav").css("height", parseInt($("header").css("height")) +
                  parseInt($("section").css("height")));
+    $("sections p").css("display", "block");
     }
     else { 
-        $("nav").css("height", "100%"); 
+        $("nav").css("height", "100%");
+        $("sections p").css("display", "none");
     }
     
     if (status == "docReady") { //document ready only
         //for action commands
         $("nav").click(function () {
             if ($(window).innerWidth() < 768) {
-                if ($(".navigation-menu a").css("display") == "none") {
-                    $(".navigation-menu a").slideDown("1000"); 
+                if ($(".site-menu a").css("display") == "none") {
+                    $(".site-menu a").slideDown("1000"); 
                 }
-                else { $(".navigation-menu a").slideUp("1000");  }
+                else { $(".site-menu a").slideUp("1000");  }
             }
         });
         $("section").click(function () {
             if ($(window).innerWidth() < 768) {
-                if ($(".navigation-menu a").css("display") != "none") {
-                    $(".navigation-menu a").slideUp("1000");    
+                if ($(".site-menu a").css("display") != "none") {
+                    $(".site-menu a").slideUp("1000");    
                 }
             } 
         });
         $(".sections h3").click(function() {
-            if ($(this).children(":first").attr("class") == 
-                "glyphicon glyphicon-menu-down") {
-                $(this).children(":first").removeClass(
-                    "glyphicon-menu-down").addClass("glyphicon-menu-up");
-                $(this).next().css("display", "block");
-            }
-            else {
-                $(this).children(":first").removeClass(
-                    "glyphicon-menu-up").addClass("glyphicon-menu-down");
-                $(this).next().css("display", "none");
+            if ($(window).innerWidth() < 768) {
+                if ($(this).children(":first").attr("class") == 
+                    "glyphicon glyphicon-menu-down") {
+                    $(this).children(":first").removeClass(
+                        "glyphicon-menu-down").addClass("glyphicon-menu-up");
+                    $(this).next().css("display", "block");
+                }
+                else {
+                    $(this).children(":first").removeClass(
+                        "glyphicon-menu-up").addClass("glyphicon-menu-down");
+                    $(this).next().css("display", "none");
+                }
             }
         });
     }

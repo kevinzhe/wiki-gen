@@ -64,7 +64,7 @@ nav img {
     text-decoration: none;
     color: rgba(0,0,0,1.0);
 }
-.navigation-menu a {
+.site-menu a {
     background-color: rgba(50,50,50,1.0);
     position: relative;
     display: block;
@@ -149,7 +149,7 @@ section {
     width: 94%;
     padding: 3% 0%;
 }
-.contents-navigation {
+.table-of-contents {
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
@@ -253,13 +253,13 @@ nav {
     position: absolute;
     left: 0px;
 }
-.navigation-menu a {
+.site-menu a {
     text-decoration: none;
     display: block;
     text-align: left;
     font-size: 13px;
 }
-.navigation-menu { padding-left: 10%; }
+.site-menu { padding-left: 10%; }
 #search-key {
     text-decoration: none;
     color: rgba(0,0,0,0.8);
@@ -321,7 +321,7 @@ section h1 {
     position: relative;
     width: 70%;
 }
-.contents-navigation {
+.table-of-contents {
     position: relative;
     width: 40%;
     margin: 20px 0px;
@@ -330,7 +330,7 @@ section h1 {
     border-color: rgba(0,0,0,0.3);
     background-color: rgba(225,225,225,0.1);
 }
-.contents-navigation pre {
+.table-of-contents pre {
     font-family: Helvetica Neue, Helvetica, Verdana, sans-serif;
     border-width: 0px;
     background-color: rgba(0,0,0,0);
