@@ -4,15 +4,15 @@ padding: 0;
 }
 
 /*Mobile phones*/
-@media only screen and (max-width: 992px)  {
+@media only screen and (max-width: 768px)  {
 header {
-    font-size: 5vw;
+    font-size: 2em;
     position: absolute;
     width: 100%;
     left: 0px;
 }  
 input {
-    left: 10%;
+    left: 2em;
     width: 90%;
     position: relative;
     border-color: white;
@@ -23,17 +23,16 @@ input {
 input[type='text'] {
     font-family: Helvetica Neue, Helvetica, Verdana, sans-serif;
     color: rgba(0,0,0,0.1);
-    padding-left: 3%;
+    padding-left: 1%;
 } 
 header div {
     position: absolute;
 }
 nav {
     position: absolute;
-    width: 10%;
+    width: 2em;
     left: 0%;
     height: 100%;
-    font-size: 7vw;
     background-color: rgba(255,255,255,1.0);
     cursor: pointer;
     border-bottom-color: rgba(0,0,0,0.1);
@@ -43,27 +42,29 @@ nav {
 nav img {
     visibility: hidden;
 }
-#searchKey {
+#search-key {
+    position: absolute;
+    right: 20px;
     text-decoration: none;
     color: rgba(0,0,0,0.4);
 }
-#searchKey:link {
+#search-key:link {
     text-decoration: none;
     color: rgba(0,0,0,0.4);
 }
-#searchKey:hover {
+#search-key:hover {
     text-decoration: none;
     color: rgba(0,0,0,0.5);
 }
-#searchKey:visited {
+#search-key:visited {
     text-decoration: none;
     color: rgba(0,0,0,0.4);
 }
-#searchKey:active {
+#search-key:active {
     text-decoration: none;
     color: rgba(0,0,0,1.0);
 }
-.navMenu a {
+.navigation-menu a {
     background-color: rgba(50,50,50,1.0);
     position: relative;
     display: block;
@@ -96,22 +97,17 @@ nav a:active {
     color: white;
     opacity: 0.95;
 }
-#menu_hamburger {
+#menu-hamburger {
     position: relative;
     height: 100%;
     left: 20%;
+    z-index: 1;
 }  
-#menu_hamburger:before {
-    content: "";
+#menu-hamburger i {
     position: absolute;
-    left: 0;
-    top: 20%;
-    width: 60%;
-    height: 12%;
-    background: rgba(0,0,0,0.4);
-    box-shadow: 
-    0 0.25em 0 0 rgba(0,0,0,0.4),
-    0 0.5em 0 0 rgba(0,0,0,0.4);
+    top: 0.05em;
+    font-size: 1.4em;
+    color: rgba(0,0,0,0.3);
 }
 
 
@@ -126,7 +122,7 @@ section {
     font-size: 2.2em;
     font-family: Georgia;
 }  
-.quickFacts {
+.quick-facts {
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
@@ -134,26 +130,26 @@ section {
     font-size: 1em;
     background-color: rgba(200,200,200,0.1);
 }
-.quickFacts div {
+.quick-facts div {
     padding: 2%;
     padding-top: 0%;
     
 }
-.quickFacts img {
+.quick-facts img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-#quickFactsTitle {
+#quick-facts-title {
     padding-top: 3%;
 }
-.mainText {
+.main-text {
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
     padding: 3% 0%;
 }
-.contentsNav {
+.contents-navigation {
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
@@ -205,7 +201,7 @@ section {
     
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
 
 header {
     margin: 0px;
@@ -257,32 +253,35 @@ nav {
     position: absolute;
     left: 0px;
 }
-.navMenu a {
+.navigation-menu a {
     text-decoration: none;
     display: block;
     text-align: left;
     font-size: 13px;
 }
-.navMenu { padding-left: 10%; }
-#searchKey {
+.navigation-menu { padding-left: 10%; }
+#search-key {
     text-decoration: none;
     color: rgba(0,0,0,0.8);
 }
-#searchKey:link {
+#search-key:link {
     text-decoration: none;
     color: rgba(0,0,0,1.0);
 }
-#searchKey:hover {
+#search-key:hover {
     text-decoration: none;
     color: rgba(0,0,0,0.8);
 }
-#searchKey:visited {
+#search-key:visited {
     text-decoration: none;
     color: rgba(0,0,0,0.8);
 }
-#searchKey:active {
+#search-key:active {
     text-decoration: none;
     color: rgba(0,0,0,0.5);
+}
+#menu-hamburger i {
+    display: none;
 }
 
 section {
@@ -305,7 +304,7 @@ section h1 {
     padding-left: 0%;
     width: 98%;
 }
-.quickFacts {
+.quick-facts {
     position: absolute;
     left: 73%;
     width: 25%;
@@ -315,23 +314,23 @@ section h1 {
     padding: 10px;
     text-align: center;
 }
-.quickFacts img {
+.quick-facts img {
     padding: 0% 5%;
 }
-.mainText {
+.main-text {
     position: relative;
     width: 70%;
 }
-.contentsNav {
+.contents-navigation {
     position: relative;
-    width: 20%;
+    width: 40%;
     margin: 20px 0px;
     border-width: 1.5px;
     border-style: solid;
     border-color: rgba(0,0,0,0.3);
     background-color: rgba(225,225,225,0.1);
 }
-.contentsNav pre {
+.contents-navigation pre {
     font-family: Helvetica Neue, Helvetica, Verdana, sans-serif;
     border-width: 0px;
     background-color: rgba(0,0,0,0);

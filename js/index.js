@@ -20,25 +20,25 @@ function wikiFunction(status) {
     $("section").css("top", $("header").css("height"));
     
     //text replacement generator
-    var bodyText = $(".mainText").html();
+    var bodyText = $(".main-text").html();
     var articleTitle = $("div h1").text();
     bodyText = bodyText.replace(articleTitle, 
                                 "<b>" + articleTitle + "</b>");
-    $(".mainText").html(bodyText);
+    $(".main-text").html(bodyText);
     
     // drop down menu for smaller devices
-    $(".navMenu a").css("width", parseInt($("header").css("width")));
+    $(".navigation-menu a").css("width", parseInt($("header").css("width")));
     
-    if ($(window).innerWidth() < 992) {
-        $(".navMenu img").attr("src", "");
-        $(".navMenu a").hide();
+    if ($(window).innerWidth() < 768) {
+        $(".navigation-menu img").attr("src", "");
+        $(".navigation-menu a").hide();
     }
     else {
-        $(".navMenu img").attr("src", "photos/wikigenLogo.png");
-        $(".navMenu").css("display", "block");
+        $(".navigation-menu img").attr("src", "img/wikigenLogo.png");
+        $(".navigation-menu").css("display", "block");
     }
     
-    if ($(window).innerWidth() > 992) {
+    if ($(window).innerWidth() > 768) {
     //nav bar on left side
     $("nav").css("height", parseInt($("header").css("height")) +
                  parseInt($("section").css("height")));
@@ -50,17 +50,17 @@ function wikiFunction(status) {
     if (status == "docReady") { //document ready only
         //for action commands
         $("nav").click(function () {
-            if ($(window).innerWidth() < 992) {
-                if ($(".navMenu a").css("display") == "none") {
-                    $(".navMenu a").slideDown("1000"); 
+            if ($(window).innerWidth() < 768) {
+                if ($(".navigation-menu a").css("display") == "none") {
+                    $(".navigation-menu a").slideDown("1000"); 
                 }
-                else { $(".navMenu a").slideUp("1000");  }
+                else { $(".navigation-menu a").slideUp("1000");  }
             }
         });
         $("section").click(function () {
-            if ($(window).innerWidth() < 992) {
-                if ($(".navMenu a").css("display") != "none") {
-                    $(".navMenu a").slideUp("1000");    
+            if ($(window).innerWidth() < 768) {
+                if ($(".navigation-menu a").css("display") != "none") {
+                    $(".navigation-menu a").slideUp("1000");    
                 }
             } 
         });
