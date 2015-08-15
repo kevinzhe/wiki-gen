@@ -19,3 +19,7 @@ preprocess/parse_xml/
 preprocess/ramdisk
 preprocess/*-log
 www/wiki-gen/db
+#external graphics
+img/wikiGen.ai
+img/250px-Wikipedia-logo-v2-en.svg
+Thumbs.db
