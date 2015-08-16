@@ -2,6 +2,8 @@ import os
 import sqlite3
 from flask import Flask, request, render_template, g
 
+from markov_generator import MarkovGenerator
+
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -52,5 +54,11 @@ def home():
 
 @app.route('/gen')
 def generate():
-    tokens = request.args.get('seed-tokens')
-    return tokens
+    seed_1 = request.args.get('seed1')
+    seed_2 = request.args.get('seed2')
+    seed_3 = request.args.get('seed3')
+    grams_db_conn = connect_grams_db()
+    grams_db_cur = grams_db_conn.cursor()
+    gen = MarkovGenerator(grams_db_cur, seed_1, seed_2, seed_3)
+    result = gen.generate()
+    return result
