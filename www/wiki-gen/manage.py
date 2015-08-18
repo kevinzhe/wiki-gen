@@ -9,6 +9,10 @@ def initdb():
     '''Create all database tables'''
     init_all_db()
 
+@manager.command
+def runglobalserver():
+    '''Run the server on 0.0.0.0'''
+    app.run(host='0.0.0.0')
 
 if __name__ == '__main__':
     manager.run()
