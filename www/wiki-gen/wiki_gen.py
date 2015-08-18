@@ -1,6 +1,6 @@
-import os
+﻿import os
 import sqlite3
-from flask import Flask, request, render_template, g
+from flask import Flask, request, render_template, g, url_for
 
 
 app = Flask(__name__)
@@ -48,7 +48,7 @@ def teardown_request(exception):
 ### Routes
 @app.route('/')
 def home():
-    return 'Hello!' 
+    return 'Hello!'
 
 @app.route('/gen')
 def generate():
