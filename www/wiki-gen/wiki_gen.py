@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from flask import Flask, request, render_template, g
+from flask import Flask, request, render_template, g, url_for
 
 from markov_generator import MarkovGenerator
 
@@ -36,7 +36,6 @@ def close_dbs(exception):
 ### Routes
 @app.route('/')
 def home():
-    seeds_db_conn = connect_seeds_db()
     return 'Hello!' 
 
 @app.route('/gen')
