@@ -21,7 +21,8 @@ section {
 }
 section img {
     width: 80%;
-    max-width: 240px;
+    max-width: 200px;
+    padding: 20px 30px;
 }
 section p {
     padding: 0 15%;
