@@ -15,9 +15,8 @@
         <section>
             <img src="{{ url_for('static', filename='img/wikigen-logo.svg') }}">
             <p>The generated encylopedia</p>
-            <!--<p>Wikigen is a Wikipedia Generator, generating paragraphs of text using the concept of Markov Chains. Enter a term in the "Generate" bar to create a fabricated sentence (made from probability!)</p>-->
-            <form action="/templates" method="post">
-                <input type='text' name='generate' placeholder='Generate'>
+            <form action="/gen" method="GET">
+                <input type='text' name='seed' placeholder='Generate'>
                 <button class='btn' type="submit">→</button>
             </form>
         </section>

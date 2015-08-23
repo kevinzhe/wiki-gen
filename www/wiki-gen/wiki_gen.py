@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from flask import Flask, request, render_template, g, url_for
+from flask import Flask, request, render_template, g, url_for, abort, redirect
 
 from markov_generator import MarkovGenerator
 
@@ -41,10 +41,20 @@ def home():
 @app.route('/gen')
 def generate():
     raw_seed = request.args.get('seed')
-    if raw_seed is None:
-        return 'No seed provided'
-    return raw_seed
-
+    if raw_seed is None or len(raw_seed) == 0:
+        return redirect(url_for('home'))
+    seeds = MarkovGenerator.raw_seed_to_seeds(raw_seed)
+    if len(seeds) != 3:
+        abort(400)
+    gen = MarkovGenerator(connect_grams_db().cursor(), *seeds)
+    try:
+        generated = gen.generate()
+    except:
+        abort(400)
+    return render_template(
+                'gen.html',
+                generated = generated,
+                topic = seeds[0])
 
 ### Exception handlers
 @app.errorhandler(404)
@@ -54,3 +64,7 @@ def not_found(exception):
 @app.errorhandler(500)
 def server_error(exception):
     return 'Server error', 500
+
+@app.errorhandler(400)
+def client_error(exception):
+    return redirect(url_for('home'))

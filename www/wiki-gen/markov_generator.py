@@ -1,4 +1,4 @@
-import random
+import random, string
 
 
 class MarkovGenerator(object):
@@ -34,7 +34,6 @@ class MarkovGenerator(object):
             current += count
         return None
 
-    
     def _id_to_token(self, token_id):
         query = 'SELECT token FROM tokens WHERE id=?'
         params = (token_id,)
@@ -47,4 +46,13 @@ class MarkovGenerator(object):
         token_id, = self.db.execute(query, params).fetchone()
         return token_id
 
-
+    @staticmethod
+    def raw_seed_to_seeds(raw_seed):
+        seeds = []
+        current = []
+        for c in raw_seed:
+            current.append(c)
+            if c in string.whitespace:
+                seeds.append(''.join(current))
+                current = []
+        return seeds
