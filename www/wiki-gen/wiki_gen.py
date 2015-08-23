@@ -5,7 +5,7 @@ from flask import Flask, request, render_template, g, url_for
 from markov_generator import MarkovGenerator
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 app.config.from_object('config')
 
 
@@ -36,11 +36,13 @@ def close_dbs(exception):
 ### Routes
 @app.route('/')
 def home():
-    return 'Hello!' 
+    return render_template('homepage.html')
 
 @app.route('/gen')
 def generate():
     raw_seed = request.args.get('seed')
+    if raw_seed is None:
+        return 'No seed provided'
     return raw_seed
 
 

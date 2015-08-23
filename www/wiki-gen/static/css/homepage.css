@@ -1,111 +1,61 @@
 @font-face {
-              font-family: "goudy";
-              src: url("../fonts/GOUDOS.ttf");
+    font-family: Goudy;
+    src: url("/fonts/goudos.ttf");
 }
 
-
-* {
-margin: 0;
-padding: 0;
-}
-
-/*Mobile phones*/
-@media only screen and (max-width: 768px)  {
 header {
-    position: relative;
     margin-top: 15%;
     text-align: center;
     font-size: 2.3em;
-    font-family: Georgia;
+    font-family: Goudy, serif;
 }
 .WN-header {
     font-size: 1.4em;
-    font-family: "goudy";
 }
 section {
-    position: relative;
     text-align: center;
     font-family: Helvetica Neue, Helvetica, Verdana, sans-serif;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 section img {
-    padding-bottom: 30px;   
+    width: 80%;
+    max-width: 240px;
 }
 section p {
-    padding: 0px 15%;
-    margin-bottom: 5%;
+    padding: 0 15%;
+    margin-bottom: 30px;
 }
 section form {
     background-color: rgba(150,150,150,0.2);
-    padding: 10px;
-    text-align: left;
-    margin: 0px 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin: 0 auto;
 }
 form input {
     width: 55%;
-    position: relative;
-    left: 15%;
+    margin-bottom: 5px;
 }
 input[type='text'] {
     color: rgba(0,0,0,0.5);
     padding-left: 1%;
 } 
-form button {
-    position: relative;
-    left: 17%;
-    width: 12%;
-}
-    
+
+button {
+  border-radius: 10px;
+  font-family: Georgia;
+  color: #ffffff;
+  background: #949494;
+  padding: 3px 20px 3px 20px;
+  text-decoration: none;
+  border: 0;
+  box-shadow: none;
 }
 
-
-
-/*Desktop*/
-@media only screen and (min-width: 768px) {
- header {
-    position: relative;
-    margin-top: 5%;
-    text-align: center;
-    font-size: 2.3em;
-    font-family: Georgia;
-}
-.WN-header {
-    font-size: 1.4em;
-    font-family: "goudy";
-}
-section {
-    position: relative;
-    text-align: center;
-    font-family: Helvetica Neue, Helvetica, Verdana, sans-serif;
-}
-section img {
-    padding-bottom: 30px;   
-}
-section p {
-    padding: 0px 25%;
-    margin-top: 2%;
-    margin-bottom: 10%;
-    font-size: 1.1em;
-}
-section form {
-    background-color: rgba(150,150,150,0.2);
-    padding: 10px;
-    text-align: center;
-    margin: 50px;
-}
-form input {
-    width: 500px;
-    position: relative;
-}
-input[type='text'] {
-    color: rgba(0,0,0,0.5);
-    padding-left: 1%;
-} 
-form button {
-    position: relative;
-    margin-left: 10px;
-    width: 100px;
-}
-    
-    
-    
+button:hover {
+  background: #737373;
+  text-decoration: none;
+  cursor: pointer;
 }
