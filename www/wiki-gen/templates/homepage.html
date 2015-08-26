@@ -9,12 +9,8 @@
     </head>
     
     <body>
-        <header>
-            <span class="WN-header">W</span>IKIGE<span class="WN-header">N</span>
-        </header>
         <section>
-            <img src="{{ url_for('static', filename='img/wikigen-logo.svg') }}">
-            <p>The generated encylopedia</p>
+            <img src="{{ url_for('static', filename='img/wikigen-homepage.svg') }}">
             <form action="/gen" method="GET">
                 <input type='text' name='seed' placeholder='Generate'>
                 <button class='btn' type="submit">→</button>

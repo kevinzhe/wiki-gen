@@ -11,21 +11,23 @@
     </head>
     
     <body class="container-fluid">
+        <div class="menu-off">
+            <h2>Wiki-Gen</h2>
+            <p>Wiki-Gen is a text generator that generates text based on a large database
+            of parsed Wikipedia articles. Using the idea of Markov Chains, sentences are formed
+            based on the probability of the following word occuring. Go ahead, give it a try!
+            Enter a word to "Generate" some text.</p>
+            <p>You can also follow our project on <a href="https://github.com/kevinzhe/wiki-gen">
+                Github!</a></p>
+        </div>
         <header>
             <nav>
                 <div id="menu-hamburger"><i class="fa fa-bars"></i></div>
-                <div class="site-menu">
-                <img src="{{ url_for('static', filename='img/wikigenLogo.png') }}" class="img-responsive">
-                <a href="{{ url_for('home') }}" class="site-menu">Main Page</a>
-                <a href="" class="site-menu">Contents</a>
-                <a href="" class="site-menu">About</a></div>
             </nav>
             
-            <form method="post">
-                <input type="text" name="generate" value="Generate" id="search-bar"
-                       onfocus="if (this.value == 'Generate') {this.value=''}"
-                       onblur="if (this.value == '') {this.value='Generate'}" >
-                <a id="search-key" href=""><i class="fa fa-search"></i></a>
+            <form action="/gen" method="GET">
+                <input type="text" name="generate" placeholder='Generate' autocomplete="off">
+                <button class='btn' type="submit"><i class="fa fa-search"></i></button>
             </form>
         </header>
         <section>
